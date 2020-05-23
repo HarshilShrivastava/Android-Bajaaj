@@ -2,11 +2,14 @@ package com.example.fitnessapp.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.fitnessapp.R;
@@ -24,14 +27,31 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText editTextUsername, editTextEmail, editTextPassword, editTextConfirmPassword;
+    RelativeLayout rellay1,rellay2;
+    Handler handler = new Handler (  );
+    Runnable runnable=new Runnable() {
+        @Override
+        public void run() {
+            rellay1.setVisibility(View.VISIBLE);
+            rellay2.setVisibility(View.VISIBLE);
+
+        }
+    };
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow ().setFlags ( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         requestWindowFeature( Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide(); // hide the title bar
 //
         setContentView( R.layout.activity_main);
+
+        rellay1=(RelativeLayout) findViewById(R.id.rellays1);
+        rellay2=(RelativeLayout) findViewById(R.id.rellays2);
+        handler.postDelayed(runnable, 2000);
+
 
         editTextUsername = findViewById(R.id.uname);
         editTextEmail = findViewById(R.id.email);

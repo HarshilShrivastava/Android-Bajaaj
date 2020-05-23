@@ -8,6 +8,7 @@ import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -30,6 +31,7 @@ public class UserStatistics extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate ( savedInstanceState );
+        getWindow ().setFlags ( WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN );
         requestWindowFeature( Window.FEATURE_NO_TITLE); //will hide the title
         getSupportActionBar().hide(); // hide the title bar
         setContentView ( R.layout.activity_user_statistics );
@@ -132,17 +134,21 @@ public class UserStatistics extends AppCompatActivity implements AdapterView.OnI
             @Override
             public void onResponse(Call<UserStatsResponse> call, Response<UserStatsResponse> response) {
                 UserStatsResponse userStatsResponse = response.body ();
-                if (userStatsResponse != null) {
-                    if (userStatsResponse.isSuccess ()) {
-                        Toast.makeText ( UserStatistics.this, "Information Saved successfully", Toast.LENGTH_LONG ).show ();
-                        Intent intent = new Intent ( UserStatistics.this, DashboardActivity.class );
+                Intent intent = new Intent ( UserStatistics.this, DashboardActivity.class );
                         intent.setFlags ( Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
                         startActivity ( intent );
-                    } else {
-                        Toast.makeText ( UserStatistics.this, "All the fields are required", Toast.LENGTH_LONG ).show ();
-                    }
-                }
+//                if (userStatsResponse != null) {
+//                    if (userStatsResponse.isSuccess ()) {
+//                        Toast.makeText ( UserStatistics.this, "Information Saved successfully", Toast.LENGTH_LONG ).show ();
+//                        Intent intent = new Intent ( UserStatistics.this, DashboardActivity.class );
+//                        intent.setFlags ( Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK );
+//                        startActivity ( intent );
+//                    } else {
+//                        Toast.makeText ( UserStatistics.this, "All the fields are required", Toast.LENGTH_LONG ).show ();
+//                    }
+//                }
             }
+
 
             @Override
             public void onFailure(Call<UserStatsResponse> call, Throwable t) {

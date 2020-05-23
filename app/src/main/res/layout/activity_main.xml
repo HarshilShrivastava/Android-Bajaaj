@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
 android:background="@drawable/gradient"
     tools:context=".activities.MainActivity">
 
-
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
 
     <ImageView
@@ -18,7 +21,11 @@ android:background="@drawable/gradient"
         android:contentDescription="@null"
         app:srcCompat="@drawable/hdr" />
 
-
+<RelativeLayout
+    android:visibility="gone"
+    android:id="@+id/rellays1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,8 +36,9 @@ android:background="@drawable/gradient"
         android:lineSpacingExtra="8sp"
         android:text="WELCOME"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#14817D"
+        android:textColor="#ffffff"
         android:textSize="40sp"
+        android:textStyle="italic"
         android:typeface="serif" />
 
     <EditText
@@ -44,10 +52,11 @@ android:background="@drawable/gradient"
         android:drawableLeft="@drawable/ic_action_uname"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Username"
-        android:textColor="#14817D"
+        android:textColor="#ffffff"
         android:textSize="20sp"/>
 
     <EditText
+        android:textColorHint="#6A676C"
         android:id="@+id/email"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -58,11 +67,12 @@ android:background="@drawable/gradient"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColor="#14817D"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:importantForAutofill="no" />
 
     <EditText
+    android:textColorHint="#6A676C"
         android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -73,11 +83,12 @@ android:background="@drawable/gradient"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Password"
         android:drawableLeft="@drawable/ic_action_password"
-        android:textColor="#14817D"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:importantForAutofill="no" />
 
     <EditText
+        android:textColorHint="#6A676C"
         android:id="@+id/confpassword"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -88,49 +99,51 @@ android:background="@drawable/gradient"
         android:fontFamily="sans-serif-condensed-medium"
         android:hint="Confirm Password"
         android:drawableLeft="@drawable/ic_action_password"
-        android:textColor="#14817D"
+        android:textColor="#ffffff"
         android:textSize="20sp"
         android:importantForAutofill="no" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="250dp"
-        android:layout_height="60dp"
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="70dp"
         android:layout_below="@+id/confpassword"
-        app:cardCornerRadius="25dp"
-        app:contentPadding="10dp"
         android:id="@+id/signupbtn"
+        android:background="@drawable/btngrad"
         android:layout_centerHorizontal="true"
-        app:cardBackgroundColor="#14817D"
+        android:text="Sign Up "
+        android:textColor="#F0F3F3"
+        android:textSize="23sp"
         android:layout_marginTop="50dp"
-        >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="Sign Up "
-                android:textColor="#F0F3F3"
-                android:textSize="23sp"
-                android:textStyle="bold" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-
+        />
     <TextView
+android:layout_below="@+id/signupbtn"
         android:id="@+id/loginclick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/signupbtn"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Click to Login"
-        android:textColor="#14817D" />
+        android:textColor="#ffffff" />
+</RelativeLayout>
+
+<RelativeLayout
+
+    android:id="@+id/rellays2"
+    android:layout_below="@+id/rellays1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+android:visibility="gone"
+        android:id="@+id/loginclicktemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Click to Login"
+        android:textColor="#ffffff" />
 
 
 
-
+</RelativeLayout>
+</RelativeLayout>
 </RelativeLayout>
