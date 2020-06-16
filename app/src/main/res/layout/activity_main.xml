@@ -8,142 +8,54 @@
 android:background="@drawable/gradient"
     tools:context=".activities.MainActivity">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="170dp"
+    <LinearLayout
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
-        android:contentDescription="@null"
-        app:srcCompat="@drawable/hdr" />
-
-<RelativeLayout
-    android:visibility="gone"
-    android:id="@+id/rellays1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+        android:id="@+id/linlay1"
+        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="240dp"
-        android:contentDescription="@null"
-        android:fontFamily="sans-serif-black"
-        android:lineSpacingExtra="8sp"
-        android:text="WELCOME"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#ffffff"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:typeface="serif" />
-
-    <EditText
-
-        android:textColorHint="#6A676C"
-        android:id="@+id/uname"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="320dp"
-        android:drawableLeft="@drawable/ic_action_uname"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="Username"
-        android:textColor="#ffffff"
-        android:textSize="20sp"/>
-
-    <EditText
-        android:textColorHint="#6A676C"
-        android:id="@+id/email"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
-        android:ems="10"
-        android:drawableLeft="@drawable/ic_action_email"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:importantForAutofill="no" />
-
-    <EditText
-    android:textColorHint="#6A676C"
-        android:id="@+id/password"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="480dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="Password"
-        android:drawableLeft="@drawable/ic_action_password"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:textColorHint="#6A676C"
-        android:id="@+id/confpassword"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="560dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:hint="Confirm Password"
-        android:drawableLeft="@drawable/ic_action_password"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:importantForAutofill="no" />
-
-    <Button
-        android:layout_width="280dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/confpassword"
-        android:id="@+id/signupbtn"
-        android:background="@drawable/btngrad"
-        android:layout_centerHorizontal="true"
-        android:text="Sign Up "
-        android:textColor="#F0F3F3"
-        android:textSize="23sp"
-        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:transitionName="logo_trans"
+            android:id="@+id/logo"
+        android:layout_marginLeft="10dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/splash"
         />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+android:layout_marginRight="10dp"
+            android:fontFamily="@font/atomic_age"
+            android:text="CarbCounter"
+            android:textColor="#ffffff"
+            android:textSize="38sp"
+            android:textStyle="bold|italic" />
+    </LinearLayout>
+
     <TextView
-android:layout_below="@+id/signupbtn"
-        android:id="@+id/loginclick"
+        android:id="@+id/tagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linlay1"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/antic"
+        android:text="Mind Your Diet!"
+        android:transitionName="text_trans"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+    <ImageView
+        android:id="@+id/design"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Click to Login"
-        android:textColor="#ffffff" />
-</RelativeLayout>
+        android:src="@drawable/splash2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/tagline"/>
 
-<RelativeLayout
-
-    android:id="@+id/rellays2"
-    android:layout_below="@+id/rellays1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-android:visibility="gone"
-        android:id="@+id/loginclicktemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Click to Login"
-        android:textColor="#ffffff" />
-
-
-
-</RelativeLayout>
-</RelativeLayout>
 </RelativeLayout>

@@ -1,9 +1,14 @@
 package com.example.fitnessapp.api;
 
+import com.example.fitnessapp.model_class.DailyDataResponse;
 import com.example.fitnessapp.model_class.DashboardResponse;
+import com.example.fitnessapp.model_class.EditProfileResponse;
 import com.example.fitnessapp.model_class.Food;
 import com.example.fitnessapp.model_class.FoodQuery;
+import com.example.fitnessapp.model_class.GetDailyDataResponse;
 import com.example.fitnessapp.model_class.LoginResponse;
+import com.example.fitnessapp.model_class.MedicalDataResponse;
+import com.example.fitnessapp.model_class.MedicalResponse;
 import com.example.fitnessapp.model_class.UserStatsResponse;
 
 import java.util.List;
@@ -13,7 +18,10 @@ import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Query;
 
 public interface Api {
@@ -31,28 +39,73 @@ public interface Api {
     @POST("/account/login/")
     Call<LoginResponse> userLogin(
             @Field("username") String username,
-            @Field ( "password" ) String password
+            @Field("password") String password
     );
+
     @FormUrlEncoded
     @POST("info/profile/")
     Call<UserStatsResponse> userInfo(
-            @Field ( "Gender" ) String gender,
-            @Field("Weight") int weight,
-            @Field("Height") int height,
-            @Field ( "Goals" ) String goals,
-            @Field ( "Activity" ) String activity,
-            @Field ( "Age" ) int age
+            @Header("Authorization") String token,
+            @Field("gender") String gender,
+            @Field("weight") int weight,
+            @Field("height") int height,
+            @Field("goals") String goals,
+            @Field("activity") String activity,
+            @Field("age") int age,
+            @Field("name") String name,
+            @Field("foodChoice") int foodChoice,
+            @Field("lactoseIntolerance") Boolean lactoseIntolerance
 
     );
 
     @GET("info/profile/")
-    Call<DashboardResponse> getInfo();
+    Call<DashboardResponse> getInfo(@Header("Authorization") String token);
 
     @GET("food/get-recoomended-food/")
-    Call<List<Food>> getFood();
+    Call<List<Food>> getFood(@Header("Authorization") String token);
 
     @GET("food/list-of-food/")
-    Call<FoodQuery>getFoodInfo(@Query ( "search" ) String foodItemNAme);
+    Call<FoodQuery> getFoodInfo(@Header("Authorization") String token,
+                                @Query("search") String foodItemNAme);
 
+    @FormUrlEncoded
+    @PUT("info/profile/")
+    Call<EditProfileResponse> updateInfo(
+            @Header("Authorization") String token,
+            @Field("gender") String gender,
+            @Field("weight") String weight,
+            @Field("height") String height,
+            @Field("goals") String goals,
+            @Field("activity") String activity,
+            @Field("age") String age,
+            @Field("name") String name,
+            @Field("foodChoice") int foodChoice,
+            @Field("lactoseIntolerance") Boolean lactoseIntolerance);
 
+    @FormUrlEncoded
+    @POST("info/Dailydiet/")
+    Call<DailyDataResponse> postDailyFood(
+            @Header("Authorization") String token,
+            @Field("item") int item,
+            @Field("amount") int amount
+    );
+
+    @GET("info/Dailydiet/")
+    Call<GetDailyDataResponse> getDailyFood(
+            @Header("Authorization") String token
+    );
+    @FormUrlEncoded
+    @POST("info/Medicalform/")
+    Call<MedicalDataResponse> getMedicalInfo(
+            @Header("Authorization") String token,
+            @Field ( "bloodGroup" ) int bloodGroup,
+            @Field ( "Description" ) String description,
+            @Field ( "problem" ) int prob1,
+            @Field ( "problem" ) int prob2,
+            @Field ( "problem" ) int prob3
+            );
+    @GET("info/Medicalform/")
+    Call<MedicalResponse> medicalData(
+            @Header("Authorization") String token
+    );
 }

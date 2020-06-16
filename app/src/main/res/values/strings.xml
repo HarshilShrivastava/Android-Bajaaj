@@ -1,26 +1,54 @@
 <resources>
     <string name="app_name">FitnessApp</string>
     <string-array name="SpinnerGender">
-        <item>-----</item>
+        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
         <item>Prefer Not to Say</item>
     </string-array>
     <string-array name="SpinnerGoals">
-        <item>-----</item>
-        <item>Extreme Lose Weight</item>
-        <item>Minor Lose Weight</item>
+        <item>Goal</item>
+        <item>Extreme Loose Weight</item>
+        <item>Minor Loose Weight</item>
         <item>Maintain Weight </item>
         <item>Weight Gain</item>
         <item>Extreme Weight Gain</item>
     </string-array>
     <string-array name="SpinnerActivity">
-        <item>-----</item>
+        <item>Activity</item>
         <item>Sedentary</item>
         <item>Lightly Active</item>
         <item>Active</item>
         <item>VeryActive</item>
     </string-array>
+
+    <string-array name="SpinnerDiet">
+        <item>Diet Preference</item>
+        <item>Vegetarian</item>
+        <item>Non Vegetarian</item>
+        <item>Eggetarian</item>
+    </string-array>
+
+    <string-array name="SpinnerBloodGroup">
+        <item>Blood Group</item>
+        <item>B-</item>
+        <item>B+</item>
+        <item>A</item>
+        <item>A+</item>
+        <item>AB-</item>
+        <item>AB+</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+    <string-array name="choiceitems">
+        <item>None</item>
+        <item>Diabetes</item>
+        <item>Hypertension</item>
+        <item>Obesity</item>
+        <item>Low Eyesight</item>
+    </string-array>
+    <string name="navigation_drawer_open">Open navigation Drawer</string>
+    <string name="navigation_drawer_close">Close navigation Drawer</string>
 </resources>
 
 

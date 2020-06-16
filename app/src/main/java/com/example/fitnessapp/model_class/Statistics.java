@@ -1,73 +1,91 @@
 package com.example.fitnessapp.model_class;
 
 public class Statistics {
-    private String Gender;
-    private int Weight;
-    private int Height;
-    private String Goals;
-    private String Activity;
-    private int Age;
-    private String Username;
-    private double BMI;
-    private int DailyCalories;
-    private double BMR;
-    private  String Condition;
+    private String gender;
+    private double weight;
+    private double height;
+    private String goals;
+    private String activity;
+    private int age;
+    private String username;
+    private double bmi;
+    private int dailyCalories;
+    private double bmr;
+    private  String condition;
+    private String foodChoice;
+    private Boolean lactoseIntolerance;
+    private String name;
 
-    public Statistics(String gender, int weight, int height, String goals, String activity, int age, String username, double BMI, int dailyCalories, double BMR, String condition) {
-        Gender = gender;
-        Weight = weight;
-        Height = height;
-        Goals = goals;
-        Activity = activity;
-        Age = age;
-        Username = username;
-        this.BMI = BMI;
-        DailyCalories = dailyCalories;
-        this.BMR = BMR;
-        Condition = condition;
+    public Statistics(String gender, double weight, double height, String goals, String activity, int age, String username, double bmi, int dailyCalories, double bmr, String condition, String foodChoice, Boolean lactoseIntolerance, String name) {
+        this.gender = gender;
+        this.weight = weight;
+        this.height = height;
+        this.goals = goals;
+        this.activity = activity;
+        this.age = age;
+        this.username = username;
+        this.bmi = bmi;
+        this.dailyCalories = dailyCalories;
+        this.bmr = bmr;
+        this.condition = condition;
+        this.foodChoice = foodChoice;
+        this.lactoseIntolerance = lactoseIntolerance;
+        this.name=name;
     }
 
     public String getGender() {
-        return Gender;
+        return gender;
     }
 
-    public int getWeight() {
-        return Weight;
+    public double getWeight() {
+        return weight;
     }
 
-    public int getHeight() {
-        return Height;
+    public double getHeight() {
+        return height;
     }
 
     public String getGoals() {
-        return Goals;
+        return goals;
     }
 
     public String getActivity() {
-        return Activity;
+        return activity;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public double getBMI() {
-        return BMI;
+    public double getBmi() {
+        return bmi;
     }
 
     public int getDailyCalories() {
-        return DailyCalories;
+        return dailyCalories;
     }
 
-    public double getBMR() {
-        return BMR;
+    public double getBmr() {
+        return bmr;
     }
 
     public String getCondition() {
-        return Condition;
+        return condition;
+    }
+
+    public String getFoodChoice() {
+        return foodChoice;
+    }
+
+    public Boolean getLactoseIntolerance() {
+        return lactoseIntolerance;
+    }
+
+    public String getName() {
+        return name;
     }
 }

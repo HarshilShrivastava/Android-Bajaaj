@@ -1,18 +1,18 @@
 package com.example.fitnessapp.model_class;
 
 public class UserStatsResponse {
-    private boolean success;
+    private boolean sucess;
     private int status;
     private Data data;
 
-    public UserStatsResponse(boolean success, int status, Data data) {
-        this.success = success;
+    public UserStatsResponse(boolean sucess, int status, Data data) {
+        this.sucess = sucess;
         this.status = status;
         this.data = data;
     }
 
-    public boolean isSuccess() {
-        return success;
+    public boolean isSucess() {
+        return sucess;
     }
 
     public int getStatus() {
